@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wth=device-wth, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>   
+   
+    <table>
+        <tbody class="button"> 
+            <tr> 
+        <td onclick="clear()">C</td>
+        <header id="screen"></header>
+            </tr>
+            <tr>
+                <td onclick="sendNum('7')">7</td>
+                <td onclick="sendNum('8')">8</td>
+                <td onclick="sendNum('9')">9</td>
+                <td onclick="sendNum('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="sendNum('4')">4</td>
+                <td onclick="sendNum('5')">5</td>
+                <td onclick="sendNum('6')">6</td>
+                <td onclick="sendNum('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="sendNum('0')">0</td>
+                <td onclick="sendNum('.')">.</td>
+                <td onclick="dorivnye()">=</td>
+                <td onclick="sendNum('/')">/</td>
+            </tr>
+    
+    
+        
+        </tbody>
+    </table>
+</div>
+    <style>
+        div{
+        font-size: 90px;
+        color: rgb(95, 160, 233);
+	    background-color: #681b9b;
+	    margin: 50px;
+	    width: 350px;
+	    height: 550px;
+	    margin: 0 auto;			
+	    padding: 10px;
+    }
+    header{
+	width: 330px;
+	height: 100px;
+	margin: 0 auto;	
+	font-size: xx-large;
+	color: #ff912b;
+	text-align: center;
+
+}
+td:active{
+	background-color: #fcbaf6;
+	border-radius: 15px;
+}
+    </style>
+    <script>
+        
+var a = '';
+var b = '';
+var num = [];
+var ans;
+        function sendNum(digit){
+            num.push(digit);
+            if(num.length != 1){
+                a = '';
+                document.getElementById('screen').innerHTML = a;
+            }
+            for(i=o; i<num.length ; i++){
+                a = a + num[i];
+            }
+            document.getElementById('screen').innerHTML = a;
+        }
+
+        function clear(){
+            document.getElementById('screen').innerHTML = '';
+            while(num.length > 0){
+                num.pop;
+            }
+            a = '';
+            b = '';
+        }
+        function dorivnye(){
+            document.getElementById('screen').innerHTML = ans;
+            
+                for(i=0; i<num.length ; i++){
+                    b += num[i];
+                }
+            ans = eval(b);
+
+        document.getElementById('screen').innerHTML = ans;
+
+                while(num.length > 0){
+                    num.pop();
+                }
+                num.push(ans.toString());
+        }
+    </script>
+</body>
+</html>
